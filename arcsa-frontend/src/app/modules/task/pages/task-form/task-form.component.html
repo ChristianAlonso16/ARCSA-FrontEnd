@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="card p-4 shadow-sm">
+        <h5 class="mb-3">
+            {{ isEditMode ? 'Editar Tarea' : 'Nueva Tarea' }}
+        </h5>
+
+        <div class="mb-3">
+            <label class="form-label">Título</label>
+            <input type="text" formControlName="title" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Descripción</label>
+            <textarea formControlName="description" class="form-control" rows="3"></textarea>
+        </div>
+
+        <button class="btn btn-primary" [disabled]="form.invalid">
+            {{ isEditMode ? 'Actualizar' : 'Guardar' }}
+        </button>
+    </form>
+</div>
+  
